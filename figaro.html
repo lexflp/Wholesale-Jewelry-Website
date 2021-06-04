@@ -1,0 +1,82 @@
+
+{% load static %}
+<html>
+  <head>
+    <title>Figaro</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container, float-right">
+     Click here to Request
+      <button class="btn btn-outline-primary btn-sm" type="button" name="button"><a href="http://localhost:8000/jewelry/quote" role="button">Quote</a></button>
+    </div>
+  </body>
+</html>
+
+<br>
+<br>
+
+<h1>Chain Wholesale</h1>
+<br>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
+              <button class="btn btn-warning " type="button" name="button"><a href="http://localhost:8000/jewelry/inventory" role="button">Chains</a></button>
+
+            </div>
+            <div class="col-sm">
+              <button class="btn btn-warning" type="button" name="button">About Us</button>
+            </div>
+            <div class="col-sm">
+             <button class="btn btn-warning" type="button" name="button">Contact Us</button>
+            </div>
+            <div class="col-sm">
+             <button class="btn btn-warning" type="button" name="button">Quote</button>
+            </div>
+</div>
+</div>
+</body>
+<br>
+<br>
+
+<h3>Figaro Chains</h3>
+
+<br>
+<br>
+
+<ul style="list-style-type:none" >
+  <div class="container, float-left">
+{% for jewelry_chain in jewelry_chains %}
+    {% if jewelry_chain.product  < 114 %}
+        <li>{{ jewelry_chain.item }} {{ jewelry_chain.name }}
+            <img src="{% static 'jewelry/Figaro200.jpg'  %}" alt="Figaro">  </li>
+    <button class="btn btn-primary btn-sm" type="button" name="button">Click for Lengths</button>
+
+    {% endif %}
+      <br>
+      <br>
+      <br>
+{% endfor %}
+  </div>
+</ul>
+
+<ul style="list-style-type:none" >
+    <div class="container, float-center">
+{% for jewelry_chain in jewelry_chains|slice:":6"  %}
+    {% if jewelry_chain.product  > 113  %}
+        <li>{{ jewelry_chain.item }} {{ jewelry_chain.name }}
+            <img src="{% static 'jewelry/Figarowhite.jpg' %}" alt="white">  </li>
+    <button class="btn btn-primary btn-sm" type="button" name="button"> Click for Lengths</button>
+        {% endif %}
+
+
+{% endfor %}
+    </div>
+</ul>
+
+
+
