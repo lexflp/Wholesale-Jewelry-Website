@@ -1,0 +1,98 @@
+{% extends 'jewelry/base.html' %}
+
+{% load static %}
+
+{% block title %} Chains {% endblock %}
+
+{% block content %}
+
+<html>
+  <head>
+    <title>Chain Page</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container, float-right">
+     Click here to Request a
+      <button class="btn btn-outline-primary btn-sm" type="button" name="button"><a href="http://localhost:8000/jewelry/quote" role="button">Quote</a></button>
+    </div>
+  </body>
+</html>
+
+<br>
+<br>
+
+<h1>Chain Wholesale</h1>
+<br>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
+              <button class="btn btn-warning " type="button" name="button">Chains</button>
+            </div>
+            <div class="col-sm">
+              <button class="btn btn-warning" type="button" name="button">About Us</button>
+            </div>
+            <div class="col-sm">
+             <button class="btn btn-warning" type="button" name="button">Contact Us</button>
+            </div>
+            <div class="col-sm">
+             <button class="btn btn-warning" type="button" name="button">Quote</button>
+            </div>
+</div>
+</div>
+</body>
+<br>
+<br>
+<h3>Types of Chains</h3>
+
+<br>
+
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-9"><button class="btn btn-outline-warning" type="button" name="button"><a href="http://localhost:8000/jewelry/figaro" role="button">Click For More options Figaro</a></button></div>
+    <div class="col-4">Figaro <br><img src="{% static 'jewelry/Figaro200.jpg'  %}" alt="Figaro"> </div>
+    <div class="col-6">Yellow 14k Gold, White 14K gold<br> Gauge 40 / 1.5mm<br> Lengths from 16-26in</div>
+
+  </div>
+    <div class="row">
+    <div class="col-9"><button class="btn btn-outline-warning" type="button" name="button">Click For More options for Cuban</button></div>
+    <div class="col-4">Cuban<br><img src="{% static 'jewelry/cuban.jpg'  %}" alt="Cuban"></div>
+    <div class="col-6">Yellow 14K Gold, White 14K Gold<br> Gauge 40 / 1.8mm<br> Lengths from 16-24in</div>
+
+  </div>
+   <div class="row">
+    <div class="col-9"><button class="btn btn-outline-warning" type="button" name="button">Click For More options for Tri-color</button></div>
+    <div class="col-4">Tri-color Star Valentino<br><img src="{% static 'jewelry/tricolor.jpg'  %}" alt="Tricolor"></div>
+    <div class="col-6"> 14K Gold <br> Gauge 40 / 1.8mm<br> Lengths from 16-28in</div>
+  </div>
+</div>
+</body>
+
+
+<br>
+<br>
+<br>
+
+
+
+
+
+    <ul>
+
+{% for jewelry_chain in jewelry_chains %}
+
+
+
+{% endfor %}
+
+    </ul>
+{% endblock %}
+
+    <img src="{{ jewelry_chain.pictures.path }}"> #old
+
