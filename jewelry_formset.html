@@ -1,0 +1,56 @@
+{% extends 'jewelry/base.html' %}
+
+{% block title %}Quote Request{% endblock %}
+
+{% block content %}
+
+<html>
+  <head>
+    <title>Chain Page</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container, float-right">
+     Click here to Request a
+      <button class="btn btn-outline-primary btn-sm" type="button" name="button"><a href="http://localhost:8000/jewelry/quote" role="button">Quote</a></button>
+    </div>
+  </body>
+</html>
+
+<br>
+<br>
+
+<h1>Chain Wholesale</h1>
+<br>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
+              <button class="btn btn-warning " type="button" name="button"><a href="http://localhost:8000/jewelry/inventory" role="button">Chains</a></button>
+            </div>
+            <div class="col-sm">
+              <button class="btn btn-warning" type="button" name="button">About Us</button>
+            </div>
+            <div class="col-sm">
+             <button class="btn btn-warning" type="button" name="button">Contact Us</button>
+            </div>
+            <div class="col-sm">
+             <button class="btn btn-warning" type="button" name="button">Quote</button>
+            </div>
+</div>
+</div>
+</body>
+
+<p>Please use the following form to submit order request.</p>
+<form action="{% url 'jewelry:jewelry-multiple' %}" method="post">
+    {% csrf_token %}
+    <table>
+        {{ formset }}
+    </table>
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}
